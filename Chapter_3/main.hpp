@@ -1,7 +1,9 @@
 #include <algorithm>
 #include <functional>
 #include <iostream>
+#include <list>
 #include <memory>
+#include <mutex>
 #include <numeric>
 #include <thread>
 #include <vector>
