@@ -104,13 +104,14 @@ void do_work_f() {
 int main() {
 
   {
-      // int ref {4};
-      // func f{ref}; //creating a temp object with function call operator
-      // defined std::thread t(f); //
-      // // Blocks the current thread until the thread identified by *this
-      // finishes its execution.
-      // //returns when the thread execution has completed.
-      // t.join();
+    int ref{4};
+    func f{ref}; // creating a temp object with function call operator
+    // defined
+    std::thread t(f); //
+    // Blocks the current thread until the thread identified by *this
+    // finishes its execution
+    // returns when the thread execution has completed.
+    t.join();
   }
 
   // using lambdas
@@ -155,7 +156,6 @@ int main() {
       // func fnc(t_guard_local);
       // std::thread t(fnc);
       // do somethine in thread;
-
   }
 
   // calling detach() -> leaves threads to run in the background
@@ -177,15 +177,17 @@ int main() {
   }
 
   {
-    do_work_f();
+      // do_work_f();
   }
 
   {
-    std::thread::hardware_concurrency(); // returns num of threads that can run
-                                         // for execution of program. Multicore
-                                         // sys -> CPU cores
-    std::cout << "num of threads in hardware "
-              << std::thread::hardware_concurrency() << std::endl;
+    // std::thread::hardware_concurrency(); // returns num of threads that can
+    // run
+    //                                      // for execution of program.
+    //                                      Multicore
+    //                                      // sys -> CPU cores
+    // std::cout << "num of threads in hardware "
+    //           << std::thread::hardware_concurrency() << std::endl;
   }
 
   return 0;
